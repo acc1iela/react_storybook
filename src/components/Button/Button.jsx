@@ -1,6 +1,18 @@
 import './button.css';
-function Button({ children, color = 'default', size = 'base' }) {
-  return <button className={`${color} ${size}`}>{children}</button>;
+import PropTypes from 'prop-types';
+
+function Button({ children, color = 'default', size = 'base', onClick }) {
+  return (
+    <button className={`${color} ${size}`} onClick={onClick}>
+      {children}
+    </button>
+  );
 }
 
 export default Button;
+
+Button.propTypes = {
+  color: PropTypes.oneOf(['primary', 'default', 'danger']),
+  size: PropTypes.oneOf(['sm', 'base', 'lg']),
+  onClick: PropTypes.func.isRequired,
+};
