@@ -21,11 +21,9 @@ export default function TaskList() {
   const dispatch = useDispatch();
 
   const pinTask = (value) => {
-    // We're dispatching the Pinned event back to our store
     dispatch(updateTaskState({ id: value, newTaskState: 'TASK_PINNED' }));
   };
   const archiveTask = (value) => {
-    // We're dispatching the Archive event back to our store
     dispatch(updateTaskState({ id: value, newTaskState: 'TASK_ARCHIVED' }));
   };
   const LoadingRow = (
